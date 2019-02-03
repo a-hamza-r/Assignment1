@@ -1,0 +1,49 @@
+
+************ QUESTION 3 *************
+
+(a) Counting objects: 7, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 836 bytes | 0 bytes/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/a-hamza-r/Assignment1.git
+   f7a5d56..3e0043e  master -> master
+
+
+(b) 10 commits in total. command used: git 'rev-list --all --count' 
+
+
+(c) It was last modified on Thu Sep 15 10:29:34 2016. I used 'git log --follow -- .gitignore' command to show all the commits that included the modified .gitignore file and checked the latest commit. 
+
+
+(d) 1) Different developers can work on different branches simultaneously without worrying about interferring with other's work. 
+2) You can work on two different functionalities separately in different branches and merge them once done. 
+3) Branch can be used to work on a buggy/not perfect code and once the code is corrected, it can easily be merged with master. 
+
+
+(e) git log shows a record of all the commits done in the current branch (i.e. its version history). git status shows the changes that have been staged and the ones that haven't been staged for the commit. It also shows which files in the directory are currently not being tracked by git. 
+
+
+(f) command: 'git log --follow -- path/to/Weapon.java' 
+
+
+(g) command: 'git log --grep=file'
+
+
+(h) (I) Inheritance lets a new class take (inherit) the properties (variables and methods) of an existing class. 
+(II) Polymorphism means that an object can take many forms. This happens when we have parent-child hierarchy in the classes. A child object can refer to a parent class. 
+(III) Encapsulation means that the variables and methods in the class are bundled together. The variables can be accessed indirectly through the methods available in the class. Common setting is to keep private variables and getter/setter methods to access them. 
+
+
+(i) In the Integration Management workflow, the developers push the commits to their respective public repositories. Integration manager resolves any integration conflicts between those public repositories before pushing to the main/blessed repository. In the dictator and lieutenant workflow, the developers push the commits to the assigned lieutenant repository rather than the public repository. The lieutenants merge them and resolve any conflicts. Dictator merges and resolves any conflicts in the lieutenant repos before pushing to central repository. 
+
+
+(j) because choosing centralized workflow would create a single point of failure i.e. one wrong push at the shared repository can cause all the code to be lost. Whereas, the Dictator and Lieutenants workflow has many checkpoints between developers and blessed/main repository. Lieutenants can resolve any conflicts for the developers and Dictators for Lieutenants. So, there's a little chance that wrong push is made on the blessed repository. 
+
+
+************** QUESTION 5 **************
+
+Polymorphism: Polymorphism is used whenever we create a new weapon of any type defined (Spear, Sword, CrazyRandomSword, MyWeapon, SimpleHammer). We refer all the weapons by the class Weapon instead of their specific classes. The reason is that Weapon is the superclass/parent class for all the weapons. Hence, we can access (let's say) a spear by saying that it is an object of weapon class (Weapon weapon = new Spear();).
+
+Encapsulation: When we use the function 'weapon.hit()', we are using encapsulation. In order to access the DAMAGE variable of any weapon outside the Weapon class, except for subclasses of Weapon, we have to use the getter function (weapon.hit) defined for all weapons because DAMAGE is protected variable. This is called encapsulation. 

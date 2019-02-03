@@ -27,8 +27,7 @@ public class CrazyRandomSword extends BasicWeapon implements Weapon {
 
 		Random rand = new Random();
 		int randNum = rand.nextInt(maxArmorToIgnore-2)+3;
-		
-		System.out.println("rand num is " + randNum);		
+				
 		// the value 'randNum' ignored from armor
 		int damage = DAMAGE - (armor - randNum);
 		return damage;
